@@ -1,47 +1,52 @@
-# Learning template [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://github.com/hchiam/learning-template/blob/main/LICENSE)
+# Learning YDF (Yggdrasil Decision Forests)
 
-Just one of the things I'm learning. https://github.com/hchiam/learning
+Just one of the things I'm learning. <https://github.com/hchiam/learning>
 
-(To use this template fast with [`gh` CLI](https://github.com/hchiam/learning-gh), you can run [`gh repo create --template learning-template learning-...`](https://cli.github.com/manual/gh_repo_create) or [set up a custom shortcut CLI command](https://github.com/hchiam/learning-bash-scripts/blob/main/gh-cli-create-learning-repo-from-template.sh).)
+<https://www.youtube.com/watch?v=xLtUgGkLTOs&list=PLNYkxOF6rcIAEVKJ98bDkQRkwvO4grhnt&index=18>
 
-(To create a convenience script repo, use this template instead: https://github.com/hchiam/convenience)
+With YDF in the browser, decision forests can do training in seconds (to customize), and inferencing in milliseconds, on CSV tabular data (or Objects), in the browser for security and performance, using CPU (without needing GPU/NPU). Decision forests already provide sometimes better interpretability than neural networks.
 
-(To create a website fast, use a code generator like [`create-next-app`](https://github.com/hchiam/learning-nextjs), [`sapper`](https://github.com/hchiam/learning-sapper), a [svelte template](https://github.com/sveltejs/template), [`yo`](https://yeoman.io/generators), or my [project-template](https://github.com/hchiam/project-template))
+<https://www.npmjs.com/package/ydf-training>
 
-(Use the redirect template https://github.com/hchiam/learning-redirect to enhance discoverability. Or [set up a custom shortcut CLI command](https://github.com/hchiam/learning-bash-scripts/blob/main/gh-cli-create-learning-redirect-repo-from-template.sh))
+<https://github.com/google/yggdrasil-decision-forests>
 
-<!-- Add reference link(s) here -->
+<https://ydf.readthedocs.io/en/stable/>
 
-## From scratch
+<https://ydf.readthedocs.io/en/latest/javascript/>
 
-Using [`yarn`](https://github.com/hchiam/learning-yarn):
-
-```bash
-yarn add
+```sh
+npm i ydf-training
 ```
 
-Or with `npm`:
-
-```bash
-npm install
+```js
+const ydf = await YDFTraining();
+const data = fs.readFileSync('data.csv');
+const model = new ydf.GradientBoostedTreesLearner('Label', 'REGRESSION').train(data);
+model.predict(data);
 ```
 
-And then:
+And if you don't need training and just want inference, there's also ydf-inference:
 
-```bash
-
+```sh
+npm i ydf-inference
 ```
 
-## Starting by testing out this repo <!-- Replace "template"s and "# and then ..."s in this section -->
-
-Using [`yarn`](https://github.com/hchiam/learning-yarn): (triple-click to select all)
-
-```bash
-git clone https://github.com/hchiam/learning-template.git && cd learning-template && yarn; # and then ...
+```js
+const ydf = await YDFInference();
+// don't need const data = fs.readFileSync('data.csv');
+const model = await loadModelFromZipBlob(fs.readFileSync('model.zip'));
+// instead of new ydf.GradientBoostedTreesLearner('Label', 'REGRESSION').train(data);
+model.predict({
+  age: [39, 40, 42],
+  gender: ['m', 'w', 'm'],
+});
+model.unload();
 ```
 
-Or with `npm`: (triple-click to select all)
+Things to try (or to get inspiration from Simple ML for Sheets):
 
-```bash
-git clone https://github.com/hchiam/learning-template.git && cd learning-template && npm install; # and then ...
-```
+- predict missing values
+- spot abnormal values
+- forecast future values
+
+<https://simplemlforsheets.com/>

@@ -6,7 +6,7 @@ Just one of the things I'm learning. <https://github.com/hchiam/learning>
 
 With YDF in the browser, decision forests can do training in seconds (to customize), and inferencing in milliseconds, on CSV tabular data (or Objects), in the browser for security and performance, using CPU (without needing GPU/NPU). Decision forests already provide sometimes better interpretability than neural networks.
 
-<https://www.npmjs.com/package/ydf-training>
+<https://www.npmjs.com/package/ydf-training> - includes code for loading, training, predicting, and saving model.
 
 <https://github.com/google/yggdrasil-decision-forests>
 

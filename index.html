@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YDF demo</title>
+  </head>
+  <body>
+    <script src="./node_modules/ydf-training/dist/training.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+    <script src="index.js"></script>
+    <!-- <script>
+      YDFTraining()
+        .then((ydf) => fetch("http://localhost:5173/data.csv"))
+        .then(async (response) => {
+          const data = await response.text();
+          const task = "CLASSIFICATION";
+          const label = "label";
+          const model = new ydf.GradientBoostedTreesLearner(label, task).train(
+            data
+          );
+          const predictions = model.predict(data);
+          console.log(model.describe());
+          const modelAsZipBlob = await model.save();
+          model.unload();
+        });
+    </script> -->
+  </body>
+</html>

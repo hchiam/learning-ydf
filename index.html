@@ -10,21 +10,22 @@
     <script src="./node_modules/ydf-inference/dist/inference.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
     <script>
-      YDFTraining().then(async (ydf) => {
-        const response = await fetch("http://localhost:5173/data.csv");
-        const data = await response.text();
-        const task = "CLASSIFICATION";
-        const label = "label";
-        const model = new ydf.GradientBoostedTreesLearner(label, task).train(
-          data
-        );
-        const predictions = model.predict(data);
-        console.log(model.describe());
-        console.log("predictions:", predictions);
-        const modelAsZipBlob = await model.save();
-        // saveModelAsZip(modelAsZipBlob);
-        model.unload();
-      });
+      YDFTraining()
+        .then((ydf) => fetch("http://localhost:5173/data.csv"))
+        .then(async (response) => {
+          const data = await response.text();
+          const task = "CLASSIFICATION";
+          const label = "label";
+          const model = new ydf.GradientBoostedTreesLearner(label, task).train(
+            data
+          );
+          const predictions = model.predict(data);
+          console.log(model.describe());
+          console.log("predictions:", predictions);
+          const modelAsZipBlob = await model.save();
+          // saveModelAsZip(modelAsZipBlob);
+          model.unload();
+        });
 
       function saveModelAsZip(blob, filename = "model.zip") {
         const blobURL = URL.createObjectURL(blob);

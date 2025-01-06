@@ -3,6 +3,7 @@
     "dev": "vite # http://localhost:5173/"
   },
   "dependencies": {
+    "ydf-inference": "0.0.4",
     "ydf-training": "0.0.1"
   }
 }

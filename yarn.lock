@@ -84,6 +84,13 @@ util-deprecate@~1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
 
+ydf-inference@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/ydf-inference/-/ydf-inference-0.0.4.tgz#7f710210f819613dc4ce675d7fb63fb7ce989f78"
+  integrity sha512-0tdrLdGDuQkL6rvs8iZS7X/I3G9myHrkYWLiBBs8Ts6sXNE4jFSjvMIF6Qan/y323BD/fezu7AVL624Ftn4I6g==
+  dependencies:
+    jszip "^3.10.1"
+
 ydf-training@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/ydf-training/-/ydf-training-0.0.1.tgz#e7238269e00d15e719ba17ea0db1414bea05e70f"

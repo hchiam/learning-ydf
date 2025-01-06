@@ -8,6 +8,8 @@ With YDF in the browser, decision forests can do training in seconds (to customi
 
 <https://www.npmjs.com/package/ydf-training> - includes code for loading, training, predicting, and saving model.
 
+<https://www.npmjs.com/package/ydf-inference>
+
 <https://github.com/google/yggdrasil-decision-forests>
 
 <https://ydf.readthedocs.io/en/stable/>
